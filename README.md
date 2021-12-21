@@ -89,7 +89,7 @@ python setup.py develop
            self.backbone = nn.ModuleList(···
            )
    		
-   		# using Cross-modal Interacting Module (CIM)
+   		  # using Cross-modal Interacting Module (CIM)
            self.interaction = True
            # using channel attention in CIM
            self.attention = True
