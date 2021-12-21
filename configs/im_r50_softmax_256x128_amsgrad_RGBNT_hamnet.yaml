@@ -1,0 +1,49 @@
+model:
+  name: 'hamnet'
+  pretrained: True
+
+data:
+  type: 'image'
+  sources: ['RGBNT201']
+  targets: ['RGBNT201']
+  height: 256
+  width: 128
+  combineall: False
+  workers: 0
+  transforms: ['random_flip']
+  save_dir: 'log\SOTA\hamnet'
+
+loss:
+  name: 'triplet'
+  softmax:
+    label_smooth: True
+  triplet_margin: 0.3
+  weight_m: 1.0
+  weight_t: 1.0
+  weight_x: 1.0
+
+
+sampler:
+  train_sampler: 'RandomIdentitySampler'
+  num_instances: 4
+
+train:
+  optim: 'sgd'
+  lr: 0.001
+  max_epoch: 80
+  batch_size: 8
+  fixbase_epoch: 0
+  open_layers: ['classifier']
+  lr_scheduler: 'multi_step'
+  stepsize: [20]
+  print_freq: 90
+
+test:
+  batch_size: 100
+  dist_metric: 'euclidean'
+  normalize_feature: False
+  evaluate: False
+  eval_freq: 8
+  ranks: [1, 5, 10]
+  rerank: False
+
