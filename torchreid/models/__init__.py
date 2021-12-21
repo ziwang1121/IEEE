@@ -67,7 +67,7 @@ __model_factory = {
     'se_resnext50_32x4d': se_resnext50_32x4d,
     'se_resnext101_32x4d': se_resnext101_32x4d,
     'densenet121': densenet121,
-    'densenet169': densenet169,
+    'densenet169': densenet169, 
     'densenet201': densenet201,
     'densenet161': densenet161,
     'densenet121_fc512': densenet121_fc512,
