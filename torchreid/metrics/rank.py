@@ -100,11 +100,11 @@ def eval_cuhk03(distmat, q_pids, g_pids, q_camids, g_camids, q_timeids, g_timeid
     return all_cmc, mAP
 
 
-def eval_market1501(distmat, q_pids, g_pids, q_camids, g_camids, q_timeids, g_timeids, max_rank):
+
+def eval_market1501(distmat, q_pids, g_pids, q_camids, g_camids, max_rank):
     """Evaluation with market1501 metric
     Key: for each query identity, its gallery images from the same camera view are discarded.
     """
-    print(q_timeids, g_timeids)
     # print(max_rank)
     num_q, num_g = distmat.shape
 
@@ -128,14 +128,13 @@ def eval_market1501(distmat, q_pids, g_pids, q_camids, g_camids, q_timeids, g_ti
         # get query pid and camid
         q_pid = q_pids[q_idx]
         q_camid = q_camids[q_idx]
-        q_timeid = q_timeids[q_idx]
 
         # print(q_pid, q_camid)
         # txt_file.write(str(q_pid) + '\n')
 
         # remove gallery samples that have the same pid and camid with query
         order = indices[q_idx]
-        remove = ((g_pids[order] == q_pid) & (g_camids[order] == q_camid)) | (g_timeids[order] == q_timeid)
+        remove = ((g_pids[order] == q_pid) & (g_camids[order] == q_camid))
         # remove = (g_pids[order] == q_pid) & (g_timeids[order] == q_timeid)
         keep = np.invert(remove)
   
