@@ -39,33 +39,4 @@ class multiModalMarginLossNew(nn.Module):
               # dist += max(0, abs(self.margin - self.dist(center1, center2)))
         return dist
 
-    # def forward(self, feat1, feat2, label1):
-    #     # print("using 3MLoss")
-    #     # print(feat1.shape, feat2.shape, label1.shape, label1)
-    #     label_num = len(label1.unique())
-    #     # print(label1, label_num)
-    #     feat1 = feat1.chunk(label_num, 0)
-    #     feat2 = feat2.chunk(label_num, 0)
-    #     # print(len(feat1), len(feat2))
-    #     # loss = Variable(.cuda())
-    #     for i in range(label_num):
-    #       center1 = torch.mean(feat1[i], dim=0)
-    #       center2 = torch.mean(feat2[i], dim=0)
-    #       # print(self.dist(center1, center2), self.dist(center1, center3), self.dist(center2, center3))
-    #       if self.dist_type == 'l2' or self.dist_type == 'l1':
-    #         if i == 0:
-    #           # print(self.dist(center1, center2), self.dist(center1, center3), self.dist(center2, center3))
-    #           dist = abs(self.margin - self.dist(center1, center2))
-    #           # dist = max(0, abs(self.margin - self.dist(center1, center2)))
-    #         else:
-    #           dist += abs(self.margin - self.dist(center1, center2))
-    #           # dist += max(0, abs(self.margin - self.dist(center1, center2)))
-    #       elif self.dist_type == 'cos':
-    #         if i == 0:
-    #           dist = max(0, 1-self.dist(center1, center2))
-    #         else:
-    #           dist += max(0, 1-self.dist(center1, center2))
-    #     return dist
-
-
 
