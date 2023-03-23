@@ -34,38 +34,12 @@ python setup.py develop
 1. You can use the setting in `im_r50_softmax_256x128_amsgrad_RGBNT_ieee_part_margin.yaml` to get the results of full IEEE.
 
    ```python
-   python ./scripts/mainMultiModal.py --config-file ./configs/im_r50_softmax_256x128_amsgrad_RGBNT_ieee_part_margin.yaml --seed 40
+   python ./scripts/mainMultiModal.py --config-file ./configs/RGBNT_ieee_part_margin.yaml --seed 40
    ```
-
-2. You can run other methods by using following  configuration file:
-
-   ```python
-   # MLFN
-   ./configs/im_r50_softmax_256x128_amsgrad_RGBNT_mlfn.yaml
-   
-   # HACNN
-   ./configs/im_r50_softmax_256x128_amsgrad_RGBNT_hacnn.yaml
-   
-   # OSNet
-   ./configs/im_r50_softmax_256x128_amsgrad_RGBNT_osnet.yaml
-   
-   # HAMNet
-   ./configs/im_r50_softmax_256x128_amsgrad_RGBNT_hamnet.yaml
-   
-   # PFNet
-   ./configs/im_r50_softmax_256x128_amsgrad_RGBNT_hamnet.yaml
-   
-   # full IEEE
-   ./configs/im_r50_softmax_256x128_amsgrad_RGBNT_ieee_part_margin.yaml
-   ```
-
-
 
 ## Details
 
 1. The details of our  **Cross-modal Interacting Module (CIM)** and **Relation-based Embedding Module (REM)** can be found in `.\torchreid\models\ieee3modalPart.py`. The design of  **Multi-modal Margin Loss(3M loss)** can be found in `.\torchreid\losses\multi_modal_margin_loss_new.py`.
-
-   
 
 2. Ablation study settings.
 
