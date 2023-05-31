@@ -102,5 +102,5 @@ python setup.py develop
    
  ## Dataset
    Google Drive Link: https://drive.google.com/drive/folders/1EscBadX-wMAT56_It5lXY-S3-b5nK1wH?usp=sharing
-   Please contect with Zi Wang (email address: ziwang1121@foxmail.com).
+   Please contact with Zi Wang (email address: ziwang1121@foxmail.com).
  
